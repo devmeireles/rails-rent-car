@@ -1,0 +1,52 @@
+<div class="cars__container">
+  <div class="cars__header">
+    <h1><%= @car.new_record? ? "New Car" : "Edit Car" %></h1>
+  </div>
+
+  <div class="cars__container">
+    <%= form_with model: @car, html: { class: 'car-form' } do |form| %>
+      <div class="form-inputs">
+        <div class="form-group">
+          <%= form.label :model, class: 'form-label' %>
+          <%= form.text_field :model, class: 'form-input' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :make, class: 'form-label' %>
+          <%= form.text_field :make, class: 'form-input' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :year, class: 'form-label' %>
+          <%= form.number_field :year, class: 'form-input' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :price, class: 'form-label' %>
+          <%= form.text_field :price, class: 'form-input' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :inventory_count, class: 'form-label' %>
+          <%= form.number_field :inventory_count, class: 'form-input' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :featured_image, style: "display: block", class: 'form-label' %>
+          <%= form.file_field :featured_image, accept: "image/*", class: 'form-input' %>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <div class="form-group">
+          <%= form.submit "Save Car", class: 'button form-submit' %>
+        </div>
+
+        <div class="form-group">
+          <%= link_to "Cancel", cars_path, class: 'button form-cancel' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>

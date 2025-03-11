@@ -1,0 +1,7 @@
+Good news!
+
+<%= @car.model %> is back in stock.
+<%= car_url(@car) %>
+
+
+Unsubscribe: <%= unsubscribe_url(token: params[:subscriber].generate_token_for(:unsubscribe)) %>

@@ -1,0 +1,21 @@
+<div class="cars__container">
+  <div class="cars__header">
+    <h1>Cars</h1>
+  </div>
+
+  <div class="cars__actions">
+    <%= link_to "New Car", new_car_path if authenticated? %>
+  </div>
+
+  <div class="cars__list">
+    <% @cars.each do |car| %>
+      <div class="cars__card">
+        <%= link_to car_path(car) do %>
+          <span class="cars__card__title">
+            <%= car.make %> - <%= car.model %>
+          </span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
